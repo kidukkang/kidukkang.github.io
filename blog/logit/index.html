@@ -13,11 +13,179 @@
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>KD_K</title>
-		<meta name="description" content="Personal webisite of KD_K">
+		<title>Logit</title>
+		<meta name="description" content="Understanding Logit">
 		<meta name="generator" content="Eleventy v3.0.0">
 		
-		<style>/* This is an arbitrary CSS string added to the bundle */
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+/* This is an arbitrary CSS string added to the bundle */
 /* Defaults */
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
@@ -319,35 +487,42 @@ header {
 		<main id="skip">
 			<heading-anchors>
 				
-<h1 id="tags">Tags</h1>
+<h1 id="logit">Logit</h1>
 
-<ul>
-
-	
-	<li><a href="/tags/another-tag/" class="post-tag">another tag</a></li>
-
-	
-	<li><a href="/tags/number-2/" class="post-tag">number 2</a></li>
-
-	
-	<li><a href="/tags/second-tag/" class="post-tag">second tag</a></li>
-
-	
-	<li><a href="/tags/posts-with-two-tags/" class="post-tag">posts with two tags</a></li>
-
-	
-	<li><a href="/tags/machine-learning/" class="post-tag">machine-learning</a></li>
-
-	
-	<li><a href="/tags/logit/" class="post-tag">logit</a></li>
-
-	
-	<li><a href="/tags/logistic-regression/" class="post-tag">logistic-regression</a></li>
-
-	
+<ul class="post-metadata">
+	<li><time datetime="2025-02-10">10 February 2025</time></li>
+	<li><a href="/tags/machine-learning/" class="post-tag">machine-learning</a>, </li>
+	<li><a href="/tags/logit/" class="post-tag">logit</a>, </li>
+	<li><a href="/tags/logistic-regression/" class="post-tag">logistic-regression</a>, </li>
 	<li><a href="/tags/statistics/" class="post-tag">statistics</a></li>
-
 </ul>
+
+<h1 id="logit-2">Logit</h1>
+<p>In machine learning, the term ‘logit’ frequently appears. While many people feel familiar with it, revisiting the core principles often reveals missing links in our understanding.</p>
+<p>At its core, the logit function transforms probabilities (ranging between 0 and 1) into an unbounded scale, mapping them to the entire set of real numbers. In practice, many classification models—particularly neural networks—output logits instead of direct probability estimates. This approach enhances numerical stability in loss computation, a topic worth exploring in more detail another time.
+<br><br></p>
+<h2 id="so-what-is-logit">So, what is Logit?</h2>
+<p>Logit is also called as log-odds, then what are odds?</p>
+<p>The odds of an event are defined as the ratio of the probability of success $q$ to the probability of failure $1-q$:</p>
+<p>$$\text{odds} = {q \over 1-q}$$</p>
+<p>For example:</p>
+<p>•	If $q=0.5$, the odds are 1 (an equal chance of success and failure).</p>
+<p>•	If $q&gt;0.5$, the odds are greater than 1 (success is more likely).</p>
+<p>•	If $q&lt;0.5$, the odds are less than 1 (success is less likely).</p>
+<p>The <strong>logit function</strong> is simply the logarithm of these odds:</p>
+<p>$$\text{logit}(q) = \text{log}({q \over 1-q})$$</p>
+<p>This transformation maps probabilities $(0,1)$ to the entire real number range $(-\infin, \infin)$</p>
+<h2 id="logit-and-sigmoid">Logit and Sigmoid</h2>
+<p>Sigmoid function is basically just the inverse of logit. From the above, we can derive:</p>
+<p>$$e^{\text{logit}} = {q\over 1-q}$$
+$$e^{-\text{logit}} = {1-q \over q} = {1 \over q} - 1$$
+$$q = {1 \over 1+e^{-\text{logit}}}=\sigma(\text{logit})$$</p>
+<p>where $\sigma$ is the sigmoid function.</p>
+<p>This relationship is the foundation of logistic regression. In logistic regression, we model the probability of a binary outcome by applying the sigmoid function to a linear combination of the input features:</p>
+<p>$$q = \sigma(\theta^T x) = \frac{1}{1 + e^{-\theta^T x}}$$</p>
+<p>Taking the logit of both sides gives:</p>
+<p>$$\text{logit}(q) = \theta^T x$$</p>
+<p>In other words, logistic regression is a linear model—but in the space of log-odds rather than probabilities.</p>
 
 
 			</heading-anchors>
@@ -368,7 +543,7 @@ header {
 			</p>
 		</footer>
 
-		<!-- This page `/tags/` was built on 2025-02-10T22:49:42.619Z -->
+		<!-- This page `/blog/logit/` was built on 2025-02-10T22:49:42.621Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
