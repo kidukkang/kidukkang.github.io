@@ -5,8 +5,6 @@ date: 2025-02-10
 tags: ["machine-learning", "logit", "logistic-regression", "statistics"]
 ---
 
-# Logit
-
 In machine learning, the term ‘logit’ frequently appears. While many people feel familiar with it, revisiting the core principles often reveals missing links in our understanding.
 
 At its core, the logit function transforms probabilities (ranging between 0 and 1) into an unbounded scale, mapping them to the entire set of real numbers. In practice, many classification models—particularly neural networks—output logits instead of direct probability estimates. This approach enhances numerical stability in loss computation, a topic worth exploring in more detail another time.
