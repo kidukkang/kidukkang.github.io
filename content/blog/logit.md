@@ -2,7 +2,7 @@
 title: Logit
 description: Understanding Logit
 date: 2025-02-10
-tags: ["machine-learning", "logit", "logistic-regression", "statistics"]
+tags: ["logit"]
 ---
 
 In machine learning, the term ‘logit’ frequently appears. While many people feel familiar with it, revisiting the core principles often reveals missing links in our understanding.
