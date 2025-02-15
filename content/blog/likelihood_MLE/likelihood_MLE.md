@@ -51,4 +51,6 @@ Where we estimate the model parameters $ \Theta $ that **maximize** the likeliho
 ---
 
 ## **References**
-https://youtu.be/M6Hf6R8byvM?si=DbDGJzD7Nw9zV17w
+
+<a href="https://youtu.be/M6Hf6R8byvM?si=DbDGJzD7Nw9zV17w">MLE explanation video @hyukppen
+</a>
