@@ -4,13 +4,15 @@ const eleventyNavigation = {
 	order: 0
 };
 
-const numberOfLatestPostsToShow = 3;
+const numberOfLatestPostsToShow = 5;
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 
-<img src="../public/img/front_img.jpg" alt="Grindelwald" style="width:600px; height:auto;">
-
+<section class="about">
+    <h2>About Me</h2>
+    <p>Hi! I’m a Machine Learning Engineer based in Germany🇩🇪, currently working on ML projects with RNA sequences🧬. Here I share insights on machine learning, AI, and everyday learnings. <a href="/about">Read more →</a></p>
+</section>
 <h1>Recent</h1>
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}

@@ -9,7 +9,7 @@ In machine learning, the term ‘logit’ frequently appears. While many people 
 At its core, the logit function transforms probabilities (ranging between 0 and 1) into an unbounded scale, mapping them to the entire set of real numbers. In practice, many classification models—particularly neural networks—output logits instead of direct probability estimates. This approach enhances numerical stability in loss computation, a topic worth exploring in more detail another time.
 <br></br>
 
-## So, what is Logit?
+# So, what is Logit?
 
 Logit is also called as log-odds, then what are odds?
 
@@ -31,7 +31,7 @@ $$\text{logit}(q) = \text{log}({q \over 1-q})$$
 
 This transformation maps probabilities $(0,1)$ to the entire real number range $(-\infin, \infin)$
 
-## Logit and Sigmoid
+# Logit and Sigmoid
 
 Sigmoid function is basically just the inverse of logit. From the above, we can derive:
 

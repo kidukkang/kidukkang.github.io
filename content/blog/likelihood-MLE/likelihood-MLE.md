@@ -4,7 +4,7 @@ date: 2025-02-15
 tags: ["likelihood", "maximum-likelihood-estimation"]
 ---
 
-## **Likelihood**
+# Likelihood
 While *probability* answers the question, "Given the model, what is the chance of seeing this data?", *likelihood* tells us, "How well does a model explain a set of observed data?" In other words, likelihood quantifies how plausible the observed data is under the assumption that the model is correct.
 
 <img src="./pockets.jpg" alt="pockets for understanding likelihood and probability" style="max-width:600px; height:auto;">
@@ -24,10 +24,10 @@ Here, $ P(X | \Theta) $ represents the probability of the observed data $ X $ gi
 
 ---
 
-## **Maximum Likelihood Estimation (MLE)**
+# Maximum Likelihood Estimation (MLE)
 From the example above, *guessing* the pocket from which the ball was drawn is analogous to **Maximum Likelihood Estimation (MLE)**.
 
-### **An Intuitive Example of MLE**
+## **An Intuitive Example of MLE**
 Let's say you've recently developed a crush on someone and want to know if they feel the same way. You start initiating conversations, sending messages like *What are you doing this weekend?*, *Do you like coffee?*, and *How’s your day?* However, your crush only responds every other day. Based on this observed behavior, you want to estimate whether they are interested in you or not.
 
 This scenario can be framed as an MLE problem:
@@ -40,7 +40,7 @@ $$ P(\text{Response frequency} | \text{Crush's interest level}) $$
 
 Given the observed responses, we infer which underlying "model" (crush's interest level) best explains the data. The most likely explanation is the one that maximizes the likelihood function.
 
-### **Formal Definition of MLE**
+## Formal Definition of MLE
 More formally, MLE is written as:
 
 $$ \hat{\theta} = \arg\max_{\theta} L(\theta | X) $$
@@ -49,7 +49,7 @@ Where we estimate the model parameters $ \Theta $ that **maximize** the likeliho
 
 ---
 
-## **References**
+## Reference
 
 <a href="https://youtu.be/M6Hf6R8byvM?si=DbDGJzD7Nw9zV17w">MLE explanation video @hyukppen
 </a>
