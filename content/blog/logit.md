@@ -1,5 +1,6 @@
 ---
 title: Logit
+date: 2025-02-10
 tags: ["logit"]
 ---
 

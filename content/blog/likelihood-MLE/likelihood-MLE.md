@@ -1,5 +1,6 @@
 ---
 title: Likelihood and Maximum Likelihood Estimation
+date: 2025-02-15
 tags: ["likelihood", "maximum-likelihood-estimation"]
 ---
 

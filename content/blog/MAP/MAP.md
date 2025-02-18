@@ -1,5 +1,6 @@
 ---
 title: Maximum A Posteriori 
+date: 2025-02-18
 tags: ["maximum-a-posteriori"]
 ---
 
@@ -20,7 +21,7 @@ Looking closely, we can see what we used in MLE within this formula. MLE tries t
 
 MAP aims to maximize the *posterior probability* $P(\theta | X)$, which is proportional to $P(X|\theta) P(\theta)$:
 
-$$ \hat{\theta}_{MAP} = \arg\max_{\theta} P(X | \theta) P(\theta) $$
+$$ \hat{\theta} = \arg\max_{\theta} P(X | \theta) P(\theta) $$
 
 Therefore, MAP considers not only how well the model fits the data ($P(X | \theta)$ - the likelihood) but also how plausible the parameters themselves are ($P(\theta)$ - the prior).
 
