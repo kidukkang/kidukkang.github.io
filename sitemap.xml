@@ -2,52 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://kidukkang.github.io/blog_example/firstpost/</loc>
-		<lastmod>2018-05-01</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://kidukkang.github.io/blog_example/secondpost/</loc>
-		<lastmod>2018-07-04</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://kidukkang.github.io/blog_example/thirdpost/</loc>
-		<lastmod>2018-08-24</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://kidukkang.github.io/blog_example/fourthpost/</loc>
-		<lastmod>2018-09-30</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://kidukkang.github.io/blog/logit/</loc>
 		<lastmod>2025-02-10</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://kidukkang.github.io/blog/likelihood_MLE/</loc>
+		<loc>https://kidukkang.github.io/blog/likelihood-MLE/</loc>
 		<lastmod>2025-02-15</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://kidukkang.github.io/blog/MAP/</loc>
+		<lastmod>2025-02-18</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://kidukkang.github.io/about/</loc>
-		<lastmod>2025-02-15</lastmod>
+		<lastmod>2025-02-18</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://kidukkang.github.io/blog/</loc>
-		<lastmod>2025-02-15</lastmod>
+		<lastmod>2025-02-18</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://kidukkang.github.io/</loc>
-		<lastmod>2025-02-15</lastmod>
+		<lastmod>2025-02-18</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://kidukkang.github.io/tags/</loc>
-		<lastmod>2025-02-15</lastmod>
+		<lastmod>2025-02-18</lastmod>
 	</url>
 </urlset>
