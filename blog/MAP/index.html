@@ -514,12 +514,12 @@ header {
 <p>$$ P(\theta | X) = \frac{P(X | \theta) P(\theta)}{P(X)} $$</p>
 <p>Looking closely, we can see what we used in MLE within this formula. MLE tries to find the parameters $\theta$ that maximize $P(X|\theta)$. Since we're looking for a function of $\theta$, $P(X)$ in the denominator is irrelevant for optimization. The new component is $P(\theta)$, which represents our prior belief.</p>
 <p>MAP aims to maximize the <em>posterior probability</em> $P(\theta | X)$, which is proportional to $P(X|\theta) P(\theta)$:</p>
-<p>$$ \hat{\theta}<em>{MAP} = \arg\max</em>{\theta} P(X | \theta) P(\theta) $$</p>
+<p>$$ \hat{\theta} = \arg\max_{\theta} P(X | \theta) P(\theta) $$</p>
 <p>Therefore, MAP considers not only how well the model fits the data ($P(X | \theta)$ - the likelihood) but also how plausible the parameters themselves are ($P(\theta)$ - the prior).</p>
 <h2 id="reference">Reference</h2>
 <p><a href="../likelihood_MLE/likelihood_MLE.md">Previous post about Likelihood and MLE</a></p>
 
-<ul class="links-nextprev"><li class="links-nextprev-next">Next →<br><a href="/blog/likelihood-MLE/">Likelihood and Maximum Likelihood Estimation</a></li>
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/likelihood-MLE/">Likelihood and Maximum Likelihood Estimation</a></li>
 </ul>
 
 			</heading-anchors>
@@ -540,7 +540,7 @@ header {
 			</p>
 		</footer>
 
-		<!-- This page `/blog/MAP/` was built on 2025-02-18T21:13:44.024Z -->
+		<!-- This page `/blog/MAP/` was built on 2025-02-18T21:53:14.677Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
