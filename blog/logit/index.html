@@ -509,7 +509,7 @@ header {
 <p>In machine learning, the term ‘logit’ frequently appears. While many people feel familiar with it, revisiting the core principles often reveals missing links in our understanding.</p>
 <p>At its core, the logit function transforms probabilities (ranging between 0 and 1) into an unbounded scale, mapping them to the entire set of real numbers. In practice, many classification models—particularly neural networks—output logits instead of direct probability estimates. This approach enhances numerical stability in loss computation, a topic worth exploring in more detail another time.
 <br><br></p>
-<h2 id="so-what-is-logit">So, what is Logit?</h2>
+<h1 id="so-what-is-logit">So, what is Logit?</h1>
 <p>Logit is also called as log-odds, then what are odds?</p>
 <p>The odds of an event are defined as the ratio of the probability of success $q$ to the probability of failure $1-q$:</p>
 <p>$$\text{odds} = {q \over 1-q}$$</p>
@@ -520,7 +520,7 @@ header {
 <p>The <strong>logit function</strong> is simply the logarithm of these odds:</p>
 <p>$$\text{logit}(q) = \text{log}({q \over 1-q})$$</p>
 <p>This transformation maps probabilities $(0,1)$ to the entire real number range $(-\infin, \infin)$</p>
-<h2 id="logit-and-sigmoid">Logit and Sigmoid</h2>
+<h1 id="logit-and-sigmoid">Logit and Sigmoid</h1>
 <p>Sigmoid function is basically just the inverse of logit. From the above, we can derive:</p>
 <p>$$e^{\text{logit}} = {q\over 1-q}$$
 $$e^{-\text{logit}} = {1-q \over q} = {1 \over q} - 1$$
@@ -553,7 +553,7 @@ $$q = {1 \over 1+e^{-\text{logit}}}=\sigma(\text{logit})$$</p>
 			</p>
 		</footer>
 
-		<!-- This page `/blog/logit/` was built on 2025-02-18T21:53:14.677Z -->
+		<!-- This page `/blog/logit/` was built on 2025-02-18T22:59:47.495Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
