@@ -1,7 +1,5 @@
 ---
 title: Likelihood and Maximum Likelihood Estimation
-description: Understanding Likelihood and its relation to MLE
-date: 2025-02-15
 tags: ["likelihood", "maximum-likelihood-estimation"]
 ---
 

@@ -1,7 +1,5 @@
 ---
 title: Maximum A Posteriori 
-description: Understanding MAP
-date: 2025-02-18
 tags: ["maximum-a-posteriori"]
 ---
 
