@@ -6,8 +6,10 @@ tags: ["likelihood", "maximum-likelihood-estimation"]
 
 # Likelihood
 While *probability* answers the question, "Given the model, what is the chance of seeing this data?", *likelihood* tells us, "How well does a model explain a set of observed data?" In other words, likelihood quantifies how plausible the observed data is under the assumption that the model is correct.
+<div style="text-align: center;">
+    <img src="./pockets.jpg" alt="pockets for understanding likelihood and probability" style="max-width:50%; height:auto;">
+</div>
 
-<img src="./pockets.jpg" alt="pockets for understanding likelihood and probability" style="max-width:600px; height:auto;">
 
 In pocket A, the probability of drawing a red ball is $P(R|A) = {1\over 2}$, and the probability of drawing a yellow ball is $P(Y|A) = {1\over 2}$. 
 In pocket B, the probability of drawing a red ball is $P(R|B= {2\over 3})$, and the probability of drawing a yellow ball is $P(Y|B)= {1\over 3}$. 
