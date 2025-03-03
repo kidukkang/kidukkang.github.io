@@ -82,9 +82,13 @@
 <p>This transformation maps probabilities $(0,1)$ to the entire real number range $(-\infin, \infin)$</p>
 <h1 id="logit-and-sigmoid">Logit and Sigmoid</h1>
 <p>Sigmoid function is basically just the inverse of logit. From the above, we can derive:</p>
-<p>$$e^{\text{logit}} = {q\over 1-q}$$
-$$e^{-\text{logit}} = {1-q \over q} = {1 \over q} - 1$$
-$$q = {1 \over 1+e^{-\text{logit}}}=\sigma(\text{logit})$$</p>
+<p>$$
+\begin{align*}
+e^{\text{logit}} &amp;= {q\over 1-q} , \cr \cr
+e^{-\text{logit}} &amp;= {1-q \over q} \cr &amp;= {1 \over q} - 1 ,\cr \cr
+q &amp;= {1 \over 1+e^{-\text{logit}}} &amp;= \sigma(\text{logit})
+\end{align*}
+$$</p>
 <p>where $\sigma$ is the sigmoid function.</p>
 <p>This relationship is the foundation of logistic regression. In logistic regression, we model the probability of a binary outcome by applying the sigmoid function to a linear combination of the input features:</p>
 <p>$$q = \sigma(\theta^T x) = \frac{1}{1 + e^{-\theta^T x}}$$</p>
@@ -113,7 +117,7 @@ $$q = {1 \over 1+e^{-\text{logit}}}=\sigma(\text{logit})$$</p>
 			</p>
 		</footer>
 
-		<!-- This page `/blog/logit/` was built on 2025-03-03T20:13:21.696Z -->
+		<!-- This page `/blog/logit/` was built on 2025-03-03T21:11:09.906Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
