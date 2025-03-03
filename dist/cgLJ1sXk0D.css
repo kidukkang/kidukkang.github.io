@@ -1,4 +1,4 @@
-.postlist { counter-reset: start-from 4 }
+.postlist { counter-reset: start-from 5 }
 /* This is an arbitrary CSS string added to the bundle */
 /* Defaults */
 :root {
