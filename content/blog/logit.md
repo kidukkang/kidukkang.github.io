@@ -36,9 +36,13 @@ This transformation maps probabilities $(0,1)$ to the entire real number range $
 Sigmoid function is basically just the inverse of logit. From the above, we can derive:
 
 
-$$e^{\text{logit}} = {q\over 1-q}$$
-$$e^{-\text{logit}} = {1-q \over q} = {1 \over q} - 1$$
-$$q = {1 \over 1+e^{-\text{logit}}}=\sigma(\text{logit})$$
+$$
+\begin{align*}
+e^{\text{logit}} &= {q\over 1-q} , \cr \cr
+e^{-\text{logit}} &= {1-q \over q} \cr &= {1 \over q} - 1 ,\cr \cr 
+q &= {1 \over 1+e^{-\text{logit}}} &= \sigma(\text{logit}) 
+\end{align*}
+$$
 
 
 where $\sigma$ is the sigmoid function.
