@@ -1,6 +1,6 @@
 ---
 title: Regularization
-date: 2025-03-01
+date: 2025-03-03
 tags: ["regularization"]
 ---
 Regularization is a fundamental technique in machine learning used to **prevent overfitting**. The most widely used techniques, **L1 and L2 regularization**, introduce a penalty term to the loss function to encourage simpler, more generalizable models.
