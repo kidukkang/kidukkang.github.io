@@ -21,9 +21,9 @@ Entropy($H$) is defined as the expected value of information for the distributio
 
 $$
 \begin{align*}
-H(p) &= \mathbb{E}[\log {1\over p(x)}] = \mathbb{E}[- \log p(x)] \\
-&= - \sum p(x)
-\log p(x)
+H(p) &= \mathbb{E}[\log {1\over p(x)}] \cr 
+&= \mathbb{E}[- \log p(x)] \cr 
+&= - \sum p(x) \log p(x) \cr
 \end{align*}
 $$
 
@@ -39,10 +39,13 @@ Entropy measures the expected informational value of an event $x$ under the true
  Cross entropy is important in machine learning because it is one of the most commonly used loss functions for classification tasks. It helps evaluate how well a model’s predictions match the actual distribution.
 
 # Binary Classification Example
-For binary classification problems with two possible classes (0 and 1), we represent the target probabilities as $p$ and the model’s predicted probabilities as $q$. Typically, the target probabilities are defined as $p \in \{y, 1-y\}$ and $q \in \{\hat{y}, 1-\hat{y}\}$, where $y$ is the probability of class 1 and $\hat{y}$ is the predicted probability of class 1. The cross entropy between the target and predicted distributions is then defined as:
+For binary classification problems with two possible classes (0 and 1), we represent the target probabilities as $p$ and the model’s predicted probabilities as $q$. Typically, the target probabilities are defined as $p \in \lbrace y, 1-y \rbrace$ and $q \in \lbrace \hat{y}, 1-\hat{y}\rbrace$, where $y$ is the probability of class 1 and $\hat{y}$ is the predicted probability of class 1. The cross entropy between the target and predicted distributions is then defined as:
 
 $$
-H(p,q) = -\sum_i p_i \log q_i = -y \log \hat{y} - (1-y) \log (1-\hat{y})
+\begin{align*}
+H(p,q) &= -\sum_i p_i \log q_i  \cr
+&= -y \log \hat{y} - (1-y) \log (1-\hat{y})
+\end{align*}
 $$
 
 ## Reference
