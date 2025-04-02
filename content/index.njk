@@ -9,44 +9,8 @@ const numberOfLatestPostsToShow = 5;
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 
-<div class="slider">
-	<div class="slides">
-		<div class="slide"><img src="../public/img/front1.png" alt="Front image1" style="max-width: 100%; height: auto; border-radius: 15%;"></div>
-		<div class="slide"><img src="../public/img/front2.png" alt="Front image2" style="max-width: 100%; height: auto; border-radius: 15%;"></div>
-		<div class="slide"><img src="../public/img/front3.png" alt="Front image3" style="max-width: 100%; height: auto; border-radius: 15%;"></div>
-	</div>
-</div>
+<img src="../public/img/front.png" alt="Front image" style="max-width: 100%; height: auto; border-radius: 15%;">
 
-<style>
-.slider {
-	position: relative;
-	width: 100%;
-	overflow: hidden;
-}
-
-.slides {
-	display: flex;
-	transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-	min-width: 100%;
-	box-sizing: border-box;
-}
-</style>
-
-<script>
-let currentIndex = 0;
-const slides = document.querySelector('.slides');
-const totalSlides = document.querySelectorAll('.slide').length;
-
-function showNextSlide() {
-	currentIndex = (currentIndex + 1) % totalSlides;
-	slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-
-setInterval(showNextSlide, 3000); // Change slide every 3 seconds
-</script>
 <section class="about">
     <h2>About Me</h2>
     <p>Hi! I’m a Machine Learning Engineer based in Germany🇩🇪, currently working on ML projects with RNA sequences🧬. Here I share insights on machine learning, AI, and everyday learnings. <a href="/about">Read more →</a></p>

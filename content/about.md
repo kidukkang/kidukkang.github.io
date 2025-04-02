@@ -5,8 +5,8 @@ const eleventyNavigation = {
 };
 ---
 # About
-<div style="text-align: center;">
-	<img src="../public/img/profile.png" alt="Profile Picture" style="max-width: 40%; height: auto; aspect-ratio: 1 / 1.2; object-fit: cover; object-position: top; border-radius: 15%;">
+<div>
+	<img src="../public/img/profile.png" alt="Profile Picture" style="width:40%; height: auto; aspect-ratio: 1/1; object-fit: cover; object-position: 40% 70%; border-radius: 15%;">
 </div>
 
 I am a Machine Learning Engineer at [Hummingbird Diagnostics](https://www.hummingbird-diagnostics.com), where I research and apply AI and machine learning techniques to RNA sequences. 
