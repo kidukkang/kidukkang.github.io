@@ -10,7 +10,7 @@ In machine learning, we often estimate the parameters of models. Maximum Likelih
     <img src="./giftbox.jpg" alt="image for understanding MAP" style="max-width:50%; height:auto;">
 </div>
 
-Imagine you're trying to figure out what your partner wants for Valentine's Day. If you see them stop and stare at a jewelry display, you might guess they want something in that category. This is similar to MLE. (A more detailed explanation of MLE can be found in this <a href="../likelihood_MLE/likelihood_MLE.md">previous post</a>).  MAP, on the other hand, incorporates prior beliefs or knowledge in addition to the observed data. Let's say you already know your partner has allergies to metals other than gold. Now, you can narrow your search not only to jewelry but specifically to gold jewelry!
+Imagine you're trying to figure out what your partner wants for Valentine's Day. If you see them stop and stare at a jewelry display, you might guess they want something in that category. This is similar to MLE. (A more detailed explanation of MLE can be found in this <a href="../likelihood-mle/likelihood-mle.md">previous post</a>).  MAP, on the other hand, incorporates prior beliefs or knowledge in addition to the observed data. Let's say you already know your partner has allergies to metals other than gold. Now, you can narrow your search not only to jewelry but specifically to gold jewelry!
 
 
 # MAP
