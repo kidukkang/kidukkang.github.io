@@ -85,17 +85,17 @@ D_{KL} (P || Q) &amp;= \sum p(x) \log ({ p(x) \over q(x)}) \cr
 $$</p>
 <h2 id="understand-kl-divergence-as-mle">Understand KL divergence as MLE</h2>
 <p>As mentioned earlier, KL divergence measures the difference between two distributions. In many machine learning scenarios, our goal is to train a model whose predicted probability distribution $q(x;\theta)$ (parameterized by $\theta$) is as close as possible to the true underlying distribution $p(x)$ of the data. Minimizing this difference is crucial for building effective models.</p>
-<p>Looking at the formula above, the true distribution is given and therefore the entropy $H(P)$ is a constant with respect to our model parameters $\theta$. This makes our goal of minimizing KL divergence equivalent to finding model parameter $\theta$ that minimizes cross entropy:
-$$
+<p>Looking at the formula above, the true distribution is given and therefore the entropy $H(P)$ is a constant with respect to our model parameters $\theta$. This makes our goal of minimizing KL divergence equivalent to finding model parameter $\theta$ that minimizes cross entropy:</p>
+<p>$$
 H(p,q) = - \sum_x p(x)\log q(x;\theta)
 $$</p>
 <p>Now, let's see why minimizing this cross entropy is equivalent to performing maximum likelihood estimation.</p>
-<p>As previously discussed in <a href="/blog/likelihood-mle/">Likelihood and Maximum Likelihood Estimation</a>, in MLE, our goal is to find the parameter $\theta$ of a model distribution $q(x;\theta)$ that best explains a set of observed data points $x_1, x_2,...,x_n$, assumining these data points are independetly and identically distributed from the true distribution $p(x)$. The log-likelihood of observed data with the parameter $\theta$ is:
-$$
+<p>As previously discussed in <a href="/blog/likelihood-mle/">Likelihood and Maximum Likelihood Estimation</a>, in MLE, our goal is to find the parameter $\theta$ of a model distribution $q(x;\theta)$ that best explains a set of observed data points $x_1, x_2,...,x_n$, assumining these data points are independetly and identically distributed from the true distribution $p(x)$. The log-likelihood of observed data with the parameter $\theta$ is:</p>
+<p>$$
 \log L(\theta | x_1,...,x_n) = \sum_{i=1}^n \log q(x_i;\theta)
 $$</p>
-<p>In practice, we often don't know the true distribution $p(x)$. However, given a set of observed data points, we can consider the empirical distribution of $\hat{p}(x)$, whcih assigns a probability of $1/n$ to each observed data point. The cross entropy between this empirical distribution $\hat{p}(x)$ and the model distribution $q(x;\theta)$ is:
-$$
+<p>In practice, we often don't know the true distribution $p(x)$. However, given a set of observed data points, we can consider the empirical distribution of $\hat{p}(x)$, whcih assigns a probability of $1/n$ to each observed data point. The cross entropy between this empirical distribution $\hat{p}(x)$ and the model distribution $q(x;\theta)$ is:</p>
+<p>$$
 \begin{align*}
 H(\hat{p},q) &amp;= - \sum_x \hat{p}(x)\log q(x;\theta) \cr
 &amp;=-{1\over n} \sum_{i=1}^n \log q(x;\theta)
@@ -127,7 +127,7 @@ $$</p>
 			</p>
 		</footer>
 
-		<!-- This page `/blog/kld/kldivergence/` was built on 2025-04-10T19:56:20.351Z -->
+		<!-- This page `/blog/kld/kldivergence/` was built on 2025-04-10T20:00:49.055Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
