@@ -3,7 +3,6 @@ title: KL Divergence
 date: 2025-03-25
 tags: ["kl_divergence","cross_entropy", "entropy"]
 ---
-# KL Divergence
 <div style="text-align: center;">
     <img src="./kld.png" alt="AGI expectation vs reality" style="max-width:80%; height:auto;">
 </div>
