@@ -13,13 +13,13 @@
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Cross Entropy</title>
+		<title>Tagged &#39;F1 Score&#39;</title>
 		<meta name="description" content="Personal webisite of KD_K">
 		<meta name="generator" content="Eleventy v3.1.2">
-		<link rel="canonical" href="/blog/crossentropy/">
+		<link rel="canonical" href="/tags/f1-score/">
 		
 		
-		<link rel="stylesheet" href="/dist/g8Qv8AY0zk.css">
+		<link rel="stylesheet" href="/dist/N2ALgZTKgm.css">
 
 		<!-- KaTeX for rendering LaTeX math -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css" integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib" crossorigin="anonymous">
@@ -60,51 +60,20 @@
 		<main id="skip">
 			<heading-anchors>
 				
-<h1 id="cross-entropy">Cross Entropy</h1>
+<h1 id="tagged-f1-score">Tagged “F1 Score”</h1>
 
-<ul class="post-metadata">
-	<li><a href="/tags/cross-entropy/" class="post-tag">cross_entropy</a>, </li>
-	<li><a href="/tags/entropy/" class="post-tag">entropy</a></li>
-</ul>
 
-<p>In life, there are times when each day seems like a repeat of the previous one, and before you know it, those days have passed in a blink. Then there are moments when a single new experience leaves a lasting impact on us. These memorable events—trips, special occasions, and so on—share one common trait: they don’t happen often. Even though an event may initially surprise us, if it begins to occur regularly, we quickly become accustomed to it, and its impact diminishes.</p>
-<p>From the perspective of informational value, everyday experiences like going to school, working, or having lunch and dinner don’t necessarily provide much new “information” for us. In contrast, a trip to a new place, the first day at school and work, those experiences certainly give us a lot of new input.  Most people, for example, are more likely to remember their summer holiday than the routine of work or school throughout the year.</p>
-<p>Like this, one way to quantify information is by considering how frequently an event occurs—how surprising it is, a concept also known as <em>surprisal</em>. If an event happens frequently, it is not surprising, and therefore, it carries a low informational value. We can think of the magnitude of information as being inversly proportional to the probability of incident $x$, $p(x)$.</p>
-<p>$$
-\text{Information} \sim {1\over p(x)}
-$$</p>
-<h1 id="entropy-is-expected-information">Entropy is Expected Information</h1>
-<p>Taking the logarithm of the above equation, we have $\log {1\over p(x)}$. When $p(x)$ is $1$ - a certain event, the informational value of the event is zero, which brings $\log {1\over p(x)}$ to $0$.</p>
-<p>Entropy($H$) is defined as the expected value of information for the distribution $p$.</p>
-<p>$$
-\begin{align*}
-H(p) &amp;= \mathbb{E}[\log {1\over p(x)}] \cr
-&amp;= \mathbb{E}[- \log p(x)] \cr
-&amp;= - \sum p(x) \log p(x) \cr
-\end{align*}
-$$</p>
-<h1 id="cross-entropy-is-surprisal-between-two-distributions">Cross Entropy is Surprisal Between Two Distributions</h1>
-<p>The cross entropy between distribution $p$ (the true distribution) and $q$ (the model's predicted distribution) is defined as follows:</p>
-<p>$$
-H(p,q) = - \sum p(x) \log q(x)
-$$</p>
-<p>Entropy measures the expected informational value of an event $x$ under the true distribution $p$. In contrast, cross entropy evaluates the expected suprisal of event $x$ under model's predicted distribution $q$ while assuming weights(probabilities) of event $x$ follow the probability from the true distribution $p$. In other words, cross entropy can be understood as the expected number of bits (basic unit of information) required to encode events from true distribution $p$ when using a coding scheme (or model) optimized for the distribution $q$.</p>
-<p>Cross entropy is important in machine learning because it is one of the most commonly used loss functions for classification tasks. It helps evaluate how well a model’s predictions match the actual distribution.</p>
-<h1 id="binary-classification-example">Binary Classification Example</h1>
-<p>For binary classification problems with two possible classes (0 and 1), we represent the target probabilities as $p$ and the model’s predicted probabilities as $q$. Typically, the target probabilities are defined as $p \in \lbrace y, 1-y \rbrace$ and $q \in \lbrace \hat{y}, 1-\hat{y}\rbrace$, where $y$ is the probability of class 1 and $\hat{y}$ is the predicted probability of class 1. The cross entropy between the target and predicted distributions is then defined as:</p>
-<p>$$
-\begin{align*}
-H(p,q) &amp;= -\sum_i p_i \log q_i  \cr
-&amp;= -y \log \hat{y} - (1-y) \log (1-\hat{y})
-\end{align*}
-$$</p>
-<h2 id="reference">Reference</h2>
-<p><a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">Wikipedia Entropy</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Cross-entropy">Wikipedia Cross entropy</a></p>
-<p><a href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">PyTorch CrossEntropyLoss</a></p>
 
-<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/regularization/">Regularization</a></li><li class="links-nextprev-next">Next →<br><a href="/blog/kld/kldivergence/">KL Divergence</a></li>
-</ul>
+<ol reversed="" class="postlist">
+	<li class="postlist-item">
+		<a href="/blog/metrics/" class="postlist-link">Metrics: Precision, Recall, F1 Score, MCC, Sensitivity, Specificity</a>
+		<time class="postlist-date" datetime="2025-06-28">June 2025</time>
+	</li>
+</ol>
+
+
+<p>See <a href="/tags/">all tags</a>.</p>
+
 
 			</heading-anchors>
 		</main>
@@ -124,7 +93,7 @@ $$</p>
 			</p>
 		</footer>
 
-		<!-- This page `/blog/crossentropy/` was built on 2025-06-28T14:32:04.040Z -->
+		<!-- This page `/tags/f1-score/` was built on 2025-06-28T14:32:04.194Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>

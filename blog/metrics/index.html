@@ -13,10 +13,10 @@
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Cross Entropy</title>
+		<title>Metrics: Precision, Recall, F1 Score, MCC, Sensitivity, Specificity</title>
 		<meta name="description" content="Personal webisite of KD_K">
 		<meta name="generator" content="Eleventy v3.1.2">
-		<link rel="canonical" href="/blog/crossentropy/">
+		<link rel="canonical" href="/blog/metrics/">
 		
 		
 		<link rel="stylesheet" href="/dist/g8Qv8AY0zk.css">
@@ -60,50 +60,53 @@
 		<main id="skip">
 			<heading-anchors>
 				
-<h1 id="cross-entropy">Cross Entropy</h1>
+<h1 id="metrics-precision-recall-f1-score-mcc-sensitivity-specificity">Metrics: Precision, Recall, F1 Score, MCC, Sensitivity, Specificity</h1>
 
 <ul class="post-metadata">
-	<li><a href="/tags/cross-entropy/" class="post-tag">cross_entropy</a>, </li>
-	<li><a href="/tags/entropy/" class="post-tag">entropy</a></li>
+	<li><a href="/tags/metrics/" class="post-tag">metrics</a>, </li>
+	<li><a href="/tags/preicision/" class="post-tag">Preicision</a>, </li>
+	<li><a href="/tags/recall/" class="post-tag">Recall</a>, </li>
+	<li><a href="/tags/f1-score/" class="post-tag">F1 Score</a>, </li>
+	<li><a href="/tags/mcc/" class="post-tag">MCC</a>, </li>
+	<li><a href="/tags/sensitivity/" class="post-tag">Sensitivity</a>, </li>
+	<li><a href="/tags/specificity/" class="post-tag">Specificity</a></li>
 </ul>
 
-<p>In life, there are times when each day seems like a repeat of the previous one, and before you know it, those days have passed in a blink. Then there are moments when a single new experience leaves a lasting impact on us. These memorable events—trips, special occasions, and so on—share one common trait: they don’t happen often. Even though an event may initially surprise us, if it begins to occur regularly, we quickly become accustomed to it, and its impact diminishes.</p>
-<p>From the perspective of informational value, everyday experiences like going to school, working, or having lunch and dinner don’t necessarily provide much new “information” for us. In contrast, a trip to a new place, the first day at school and work, those experiences certainly give us a lot of new input.  Most people, for example, are more likely to remember their summer holiday than the routine of work or school throughout the year.</p>
-<p>Like this, one way to quantify information is by considering how frequently an event occurs—how surprising it is, a concept also known as <em>surprisal</em>. If an event happens frequently, it is not surprising, and therefore, it carries a low informational value. We can think of the magnitude of information as being inversly proportional to the probability of incident $x$, $p(x)$.</p>
+<p>During my study and research, I mostly encountered <strong>accuracy</strong>, <strong>precision</strong>, <strong>recall</strong>, and <strong>F1 score</strong> as performance metrics for machine learning tasks. After I started working in the field of biotech, I quickly realized that people in biology use different metrics. It always takes me some time to get used to these definitions, so I’m writing this to go over them again in the hope that it will stick in my brain longer and more clearly.</p>
+<p><strong>Accuracy</strong> is the most straightforward metric; it measures the proportion of correct predictions among the total number. <strong>Precision</strong> and <strong>recall</strong> are two common performance metrics used in machine learning. Precision quantifies, among the data predicted as positive, how much is actually correct. For example, in a task distinguishing cats and dogs, precision tells us how many of the photos predicted as “dog” by the model are actually dogs. Recall quantifies, among all positives in the data(labeled as dog), how much the model successfully retrieves(predicted as dog). In the same example, recall shows what fraction of all actual dog photos the model correctly predicts as “dog.”</p>
+<p>If every positive prediction is correct, precision is 1. If every actual truth is found, recall is 1. Each metric has cases where it is more important. For example, precision is especially crucial in the justice system. If a judge decides to send someone to jail because they are believed guilty, the harm of sending an innocent person to jail is extremely high. That’s why justice systems tend to be conservative in convicting, even at the cost of letting some guilty people go free (sacrificing recall).</p>
+<p><strong>When is recall more important than precision?</strong> Think of a fire alarm. It’s not uncommon to hear a fire alarm and have to evacuate a building, only to find out there was no real fire (a false positive). However, if there is an actual fire and the alarm fails to go off, the consequences can be far worse than the inconvenience of a false alarm. So, these systems are designed to maximize recall, even if that means tolerating a higher rate of false positives.</p>
+<p>Because precision and recall have an inverse relationship, they are often reported together, or combined using the <strong>F1 score</strong> or the <strong>Matthews Correlation Coefficient (MCC)</strong>.</p>
+<p><strong>F1 score</strong> is simply the harmonic mean of precision and recall.</p>
 <p>$$
-\text{Information} \sim {1\over p(x)}
+F1 = \left( \frac{1}{\frac{1}{\text{Precision}} + \frac{1}{\text{Recall}}} \cdot 2 \right) = \frac{2 \times \text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
 $$</p>
-<h1 id="entropy-is-expected-information">Entropy is Expected Information</h1>
-<p>Taking the logarithm of the above equation, we have $\log {1\over p(x)}$. When $p(x)$ is $1$ - a certain event, the informational value of the event is zero, which brings $\log {1\over p(x)}$ to $0$.</p>
-<p>Entropy($H$) is defined as the expected value of information for the distribution $p$.</p>
+<p>The <strong>Matthews Correlation Coefficient (MCC)</strong>, like the F1 score, is a single-number metric for binary classification, but it captures different aspects of performance.</p>
+<p>MCC is defined as:</p>
 <p>$$
-\begin{align*}
-H(p) &amp;= \mathbb{E}[\log {1\over p(x)}] \cr
-&amp;= \mathbb{E}[- \log p(x)] \cr
-&amp;= - \sum p(x) \log p(x) \cr
-\end{align*}
+MCC = \frac{TP \times TN - FP \times FN}{\sqrt{(TP+FP)(TP+FN)(TN+FP)(TN+FN)}} \in [-1, 1]
 $$</p>
-<h1 id="cross-entropy-is-surprisal-between-two-distributions">Cross Entropy is Surprisal Between Two Distributions</h1>
-<p>The cross entropy between distribution $p$ (the true distribution) and $q$ (the model's predicted distribution) is defined as follows:</p>
+<p>The F1 score uses TP, FP, and FN, focusing more on positive cases (TN is not considered). MCC, in contrast, uses all four confusion matrix elements and is particularly useful for imbalanced data, as it avoids misleadingly high scores driven by the majority class.</p>
+<p>By the way, MCC seems to be the name commonly used in machine learning. According to Wikipedia, in statistics, it’s known as the <strong>phi coefficient</strong> or the <strong>mean square contingency coefficient</strong>. (Can we just use one name everywhere? 🥲)</p>
+<div style="text-align: center;">
+    <picture><source type="image/avif" srcset="/blog/metrics/LefBo9lpLt-440.avif 440w"><source type="image/webp" srcset="/blog/metrics/LefBo9lpLt-440.webp 440w"><img loading="lazy" decoding="async" src="/blog/metrics/LefBo9lpLt-440.svg" alt="Precision and Recall" style="max-width:70%; height:auto;" width="440" height="800"></picture>
+</div>
+<p>After getting used to these metrics, I entered the field of bioinformatics—where suddenly, nobody talks about precision and recall; instead, they use <strong>sensitivity</strong> and <strong>specificity</strong>!</p>
+<p>Sensitivity is actually identical to recall, just a different name 🤷🏻‍♂️. What is specificity? Specificity is also called the True Negative Rate:</p>
 <p>$$
-H(p,q) = - \sum p(x) \log q(x)
+\text{Specificity} = \frac{TN}{TN + FP}
 $$</p>
-<p>Entropy measures the expected informational value of an event $x$ under the true distribution $p$. In contrast, cross entropy evaluates the expected suprisal of event $x$ under model's predicted distribution $q$ while assuming weights(probabilities) of event $x$ follow the probability from the true distribution $p$. In other words, cross entropy can be understood as the expected number of bits (basic unit of information) required to encode events from true distribution $p$ when using a coding scheme (or model) optimized for the distribution $q$.</p>
-<p>Cross entropy is important in machine learning because it is one of the most commonly used loss functions for classification tasks. It helps evaluate how well a model’s predictions match the actual distribution.</p>
-<h1 id="binary-classification-example">Binary Classification Example</h1>
-<p>For binary classification problems with two possible classes (0 and 1), we represent the target probabilities as $p$ and the model’s predicted probabilities as $q$. Typically, the target probabilities are defined as $p \in \lbrace y, 1-y \rbrace$ and $q \in \lbrace \hat{y}, 1-\hat{y}\rbrace$, where $y$ is the probability of class 1 and $\hat{y}$ is the predicted probability of class 1. The cross entropy between the target and predicted distributions is then defined as:</p>
-<p>$$
-\begin{align*}
-H(p,q) &amp;= -\sum_i p_i \log q_i  \cr
-&amp;= -y \log \hat{y} - (1-y) \log (1-\hat{y})
-\end{align*}
-$$</p>
+<p>It quantifies, among all actual negatives, what fraction is correctly predicted as negative.</p>
+<p>Just as in the fire alarm example, sensitivity becomes even more important in medical cases such as disease screening—we don’t want to miss any real cases.</p>
+<p>While precision and specificity both penalize false positives, they answer slightly different questions. Specificity focuses on minimizing false positives relative to all negatives, while precision minimizes false positives relative to positive predictions. In the justice system example, precision asks: “Among those jailed, how many were truly guilty?” Specificity asks: “Among all innocents, how many did the system correctly set free?”</p>
+<div style="text-align: center;">
+    <picture><source type="image/avif" srcset="/blog/metrics/mKTi-iDv_w-440.avif 440w"><source type="image/webp" srcset="/blog/metrics/mKTi-iDv_w-440.webp 440w"><img loading="lazy" decoding="async" src="/blog/metrics/mKTi-iDv_w-440.svg" alt="Sensitivity and Specificity" style="max-width:70%; height:auto;" width="440" height="800"></picture>
+</div>
 <h2 id="reference">Reference</h2>
-<p><a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">Wikipedia Entropy</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Cross-entropy">Wikipedia Cross entropy</a></p>
-<p><a href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">PyTorch CrossEntropyLoss</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and Recall Wikipedia</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">Sensitivity and Specificity Wikipedia</a></p>
 
-<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/regularization/">Regularization</a></li><li class="links-nextprev-next">Next →<br><a href="/blog/kld/kldivergence/">KL Divergence</a></li>
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/autoencoder/">Autoencoder</a></li>
 </ul>
 
 			</heading-anchors>
@@ -124,7 +127,7 @@ $$</p>
 			</p>
 		</footer>
 
-		<!-- This page `/blog/crossentropy/` was built on 2025-06-28T14:32:04.040Z -->
+		<!-- This page `/blog/metrics/` was built on 2025-06-28T14:32:04.042Z -->
 		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
