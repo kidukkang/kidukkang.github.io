@@ -1,5 +1,5 @@
 ---
-title: "[Lit] Harnessing the Universal Geometry of Embeddings"
+title: "[Paper] Harnessing the Universal Geometry of Embeddings"
 date: 2025-06-29
 tags: ["literature-review", "embeddings"]
 ---
