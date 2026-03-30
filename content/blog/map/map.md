@@ -28,4 +28,4 @@ $$ \hat{\theta} = \arg\max_{\theta} P(X | \theta) P(\theta) $$
 Therefore, MAP considers not only how well the model fits the data ($P(X | \theta)$ - the likelihood) but also how plausible the parameters themselves are ($P(\theta)$ - the prior).
 
 ## Reference
- <a href="../likelihood_MLE/likelihood_MLE.md">Previous post about Likelihood and MLE</a>
+ <a href="../likelihood-mle/likelihood-mle.md">Previous post about Likelihood and MLE</a>

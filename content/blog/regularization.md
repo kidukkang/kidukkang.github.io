@@ -12,11 +12,11 @@ Here, $L$ represents the original loss function, $\lambda$ is the regularization
 
 By minimizing this regularized loss, we encourage the weights to become smaller, therefore reducing model complexity. But why do we want smaller weights?
 
-In the beginning of training, weights are often initialized close to zero. This means the training process initially focuses on minimizing the original loss $L$. Once $L$ reaches a certain level of minimization, the regularization term, $\lambda ||w||_p$, starts to play a more significant role, encouraging the model to reduce the magnitude of the weights. If some weights are reduced to near zero, it indicates that these weights have little influence on reducing the overall loss. We can effectively remove these weights without significantly impacting performance. Keeping weights large only increases model complexity without providing any real benefit. In other words, by driving unnecessary weights towards zero, we can simplify the model.
+At the beginning of training, weights are often initialized close to zero. This means the training process initially focuses on minimizing the original loss $L$. Once $L$ reaches a certain level of minimization, the regularization term, $\lambda ||w||_p$, starts to play a more significant role, encouraging the model to reduce the magnitude of the weights. If some weights are reduced to near zero, it indicates that these weights have little influence on reducing the overall loss. We can effectively remove these weights without significantly impacting performance. Keeping weights large only increases model complexity without providing any real benefit. In other words, by driving unnecessary weights towards zero, we can simplify the model.
 
 Furthermore, without regularization, model weights can grow excessively large during training as the model attempts to perfectly fit the training data. This overfitting is precisely what we aim to prevent with regularization. By penalizing large weights, we discourage the model from relying too heavily on individual data points, promoting the learning of more general patterns.
 
-# L1 Regularization(Lasso)
+# L1 Regularization (Lasso)
 L1 regularization adds an absolute value penalty term to the objective loss function:
 
 $$
@@ -28,7 +28,7 @@ $$
 
 where $L_{total}$ is the overall loss function, $\lambda$ is regularization strength, $|w_i|$ represents the absolute value of parameter $w_i$. 
 
-Interesting property of L1 regularization is that it encourages sparsity, meaning that it sets some parameters to exactly zero. Due to this property, L1 penalty becomes useful for feature selection, as it effectively removes irrelevant features by eliminating their corresponding weights.
+An interesting property of L1 regularization is that it encourages sparsity, meaning that it sets some parameters to exactly zero. Due to this property, the L1 penalty becomes useful for feature selection, as it effectively removes irrelevant features by eliminating their corresponding weights.
 
 ### Gradient of L1 regularization
 
@@ -40,9 +40,9 @@ $$
 \end{cases}
 $$
 
-The gradient of L1 penalty term is constant (either +$\lambda$ or -$\lambda$) regardless of the weight's magnitude. This means that all weights experience the same shrinking force regardless of their size. Therefore, for small weights, L1 completely zeros them out over time. 
+The gradient of the L1 penalty term is constant (either +$\lambda$ or -$\lambda$) regardless of the weight's magnitude. This means that all weights experience the same shrinking force regardless of their size. Therefore, for small weights, L1 completely zeros them out over time. 
 
-# L2 Regularization(Ridge) 
+# L2 Regularization (Ridge) 
 Meanwhile, L2 regularization adds a squared penalty term to the loss function:
 
 $$
@@ -55,9 +55,9 @@ $$
 ### Gradient of L2 regularization
 $$ \frac{\partial L_{total}}{\partial w_i}  = \frac{\partial L }{\partial w_i} + 2w_i\lambda $$
 
-Unlike in L1 loss, where the gradient is constant, L2 regularization scales proportionally with the magnitude of weight $w_i$. It means that larger weights have larger shrinking force and smaller weights shrink less. Because L2 regularization applies a force proportional to the weight size, it encourages all weights to be small but typically not exactly zero.
+Unlike in L1 loss, where the gradient is constant, L2 regularization scales proportionally with the magnitude of weight $w_i$. This means that larger weights have a larger shrinking force and smaller weights shrink less. Because L2 regularization applies a force proportional to the weight size, it encourages all weights to be small but typically not exactly zero.
 
-As L2 regularization prevents large weights by punishing them with larger gradient, it promotes smoothness, and helps numerical stability in the model with multicollinearity.
+As L2 regularization prevents large weights by punishing them with a larger gradient, it promotes smoothness, and helps with numerical stability in models with multicollinearity.
 
 # MAP interpretation
 In Bayesian statistics, we aim to find the most probable set of model parameters *given* the observed data and prior belief. Bayes' theorem gives us the posterior distribution: 
@@ -74,10 +74,10 @@ $$
 \end{align*}
 $$
 
-Here we can find $- \log p(x|\theta)$, which corresponds to usual loss function(negative log likelihood), and $- \log p(\theta)$ from prior distribution over the parameters which will become our regularization term.
+Here we can find $- \log p(x|\theta)$, which corresponds to usual loss function (negative log likelihood), and $- \log p(\theta)$ from prior distribution over the parameters which will become our regularization term.
 
 ### L1 regularization as Laplace prior
-A random variable($w$) has a Laplace distribution if its probability density function is:
+A random variable ($w$) has a Laplace distribution if its probability density function is:
 
 $$
 p(w|\mu,b) = {1\over 2b}e^{(- {|w-\mu| \over b})}
@@ -107,13 +107,13 @@ $$
 Comparing this gradient to the gradient of the L1 regularization term, we observe that ${1\over b}$ corresponds to $\lambda$. So, minimizing negative log posterior with a Laplace prior is equivalent to minimizing the Loss function with an L1 regularization.
 
 ### L2 regularization as Gaussian prior
-Gaussian distribution form its probability density function as:
+Gaussian distribution forms its probability density function as:
 $$
 p(w|\mu, \sigma ^2) = {1 \over \sqrt{2 \pi \sigma ^2}} e ^{- {(w-\mu)^2\over 2 \sigma ^2}}
 $$
 where the parameter $\mu$ is the mean of the distribution and the parameter $\sigma^2$ is the variance.
 
-Let's consider a prior distribution for each parameter $w_i$ to be independent and identically distributed gaussian with mean $0$ and variance $\sigma^2$:
+Let's consider a prior distribution for each parameter $w_i$ to be independent and identically distributed Gaussian with mean $0$ and variance $\sigma^2$:
 $$
 p(w_i) = {1 \over \sqrt{2 \pi \sigma ^2}}e^{- {w_i^2\over 2 \sigma ^2}}
 $$
@@ -127,7 +127,7 @@ Computing the gradient of this:
 $$
 \frac{\partial}{\partial w_i} {w_i^2 \over 2\sigma^2}  = {w_i \over \sigma^2}
 $$
-From above L2 loss, we can put ${1\over \sigma^2} = 2\lambda$, and therefore minimizing negative log posterior with a gaussian prior is equivalent to minimizing the loss function with an L2 regularization term.
+From above L2 loss, we can put ${1\over \sigma^2} = 2\lambda$, and therefore minimizing negative log posterior with a Gaussian prior is equivalent to minimizing the loss function with an L2 regularization term.
 ## Reference
  <a href="https://en.wikipedia.org/wiki/Laplace_distribution">Wikipedia Laplace distribution</a> 
 

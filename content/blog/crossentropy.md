@@ -8,7 +8,7 @@ In life, there are times when each day seems like a repeat of the previous one, 
 
 From the perspective of informational value, everyday experiences like going to school, working, or having lunch and dinner don’t necessarily provide much new “information” for us. In contrast, a trip to a new place, the first day at school and work, those experiences certainly give us a lot of new input.  Most people, for example, are more likely to remember their summer holiday than the routine of work or school throughout the year.
 
-Like this, one way to quantify information is by considering how frequently an event occurs—how surprising it is, a concept also known as *surprisal*. If an event happens frequently, it is not surprising, and therefore, it carries a low informational value. We can think of the magnitude of information as being inversly proportional to the probability of incident $x$, $p(x)$.
+Like this, one way to quantify information is by considering how frequently an event occurs—how surprising it is, a concept also known as *surprisal*. If an event happens frequently, it is not surprising, and therefore, it carries a low informational value. We can think of the magnitude of information as being inversely proportional to the probability of incident $x$, $p(x)$.
 
 $$
 \text{Information} \sim {1\over p(x)}
@@ -34,7 +34,7 @@ $$
 H(p,q) = - \sum p(x) \log q(x) 
 $$
 
-Entropy measures the expected informational value of an event $x$ under the true distribution $p$. In contrast, cross entropy evaluates the expected suprisal of event $x$ under model's predicted distribution $q$ while assuming weights(probabilities) of event $x$ follow the probability from the true distribution $p$. In other words, cross entropy can be understood as the expected number of bits (basic unit of information) required to encode events from true distribution $p$ when using a coding scheme (or model) optimized for the distribution $q$.
+Entropy measures the expected informational value of an event $x$ under the true distribution $p$. In contrast, cross entropy evaluates the expected surprisal of event $x$ under the model's predicted distribution $q$ while assuming weights (probabilities) of event $x$ follow the probability from the true distribution $p$. In other words, cross entropy can be understood as the expected number of bits (basic unit of information) required to encode events from the true distribution $p$ when using a coding scheme (or model) optimized for the distribution $q$.
 
  Cross entropy is important in machine learning because it is one of the most commonly used loss functions for classification tasks. It helps evaluate how well a model’s predictions match the actual distribution.
 

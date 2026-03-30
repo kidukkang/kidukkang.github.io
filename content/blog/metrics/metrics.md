@@ -1,12 +1,12 @@
 ---
 title: "Metrics: Precision, Recall, F1 Score, MCC, Sensitivity, Specificity"
 date: 2025-06-28
-tags: ["metrics", "Preicision", "Recall", "F1 Score", "MCC", "Sensitivity", "Specificity"]
+tags: ["metrics", "Precision", "Recall", "F1 Score", "MCC", "Sensitivity", "Specificity"]
 ---
 
 During my study and research, I mostly encountered **accuracy**, **precision**, **recall**, and **F1 score** as performance metrics for machine learning tasks. After I started working in the field of biotech, I quickly realized that people in biology use different metrics. It always takes me some time to get used to these definitions, so I’m writing this to go over them again in the hope that it will stick in my brain longer and more clearly.
 
-**Accuracy** is the most straightforward metric; it measures the proportion of correct predictions among the total number. **Precision** and **recall** are two common performance metrics used in machine learning. Precision quantifies, among the data predicted as positive, how much is actually correct. For example, in a task distinguishing cats and dogs, precision tells us how many of the photos predicted as “dog” by the model are actually dogs. Recall quantifies, among all positives in the data(labeled as dog), how much the model successfully retrieves(predicted as dog). In the same example, recall shows what fraction of all actual dog photos the model correctly predicts as “dog.”
+**Accuracy** is the most straightforward metric; it measures the proportion of correct predictions among the total number. **Precision** and **recall** are two common performance metrics used in machine learning. Precision quantifies, among the data predicted as positive, how much is actually correct. For example, in a task distinguishing cats and dogs, precision tells us how many of the photos predicted as “dog” by the model are actually dogs. Recall quantifies, among all positives in the data (labeled as dog), how much the model successfully retrieves (predicted as dog). In the same example, recall shows what fraction of all actual dog photos the model correctly predicts as “dog.”
 
 If every positive prediction is correct, precision is 1. If every actual truth is found, recall is 1. Each metric has cases where it is more important. For example, precision is especially crucial in the justice system. If a judge decides to send someone to jail because they are believed guilty, the harm of sending an innocent person to jail is extremely high. That’s why justice systems tend to be conservative in convicting, even at the cost of letting some guilty people go free (sacrificing recall).
 

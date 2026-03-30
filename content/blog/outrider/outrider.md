@@ -10,14 +10,14 @@ tags: ["literature-review"]
 
 These days, I’ve been working on a project to clean up RNA-seq expression data, especially trying to reduce the effects of technical variations. After about a year of exploring biological datasets, I’ve learned one thing for sure: biodata is messy.
 
-When I worked with image data, problems in the data were often obvious. If something was wrong, I could just see it or the whole thing simply wouldn’t work. In biology, it’s a different story. The signal we want is buried under layers of variation—some of it real biology, like differences in sex, age, tissue type, or disease, and some of it pure noise, like how the sample was handled or whether there was unwanted hemolysis. All of this gets condensed into a single number: the expression level.
+When I worked with image data, problems in the data were often obvious. If something was wrong, I could just see it, or the whole thing simply wouldn’t work. In biology, it’s a different story. The signal we want is buried under layers of variation—some of it real biology, like differences in sex, age, tissue type, or disease, and some of it pure noise, like how the sample was handled or whether there was unwanted hemolysis. All of this gets condensed into a single number: the expression level.
 
 So when an expression level shoots high or drops low, how can we tell if it’s a genuine biological anomaly or just a byproduct of all that mess? What’s worse, we have no way of knowing the true underlying value—the “ground truth.”
 
 This is where I came across this [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC6288422/). I’ve been increasingly interested in how we can mitigate technical variation and get closer to the actual truth we want to see in biological data. Because, at the end of the day, data is the foundation of any ML application—and as we all know, garbage in, garbage out.
-The authors introduced an outlier detection method that gave me several aha moments in terms of theoretical soundness. First, they pointed out that many previous outlier detection tools skipped formal statistical testing and relied on arbitrary thresholds. This absolutely applies to my work too, and it’s something that has frustrated me. Second, many methods require manual confounder corrections, which I’d like to improve someday by using machine learning in a more automated but still robust way.
+The authors introduced an outlier detection method that gave me several "aha" moments in terms of theoretical soundness. First, they pointed out that many previous outlier detection tools skipped formal statistical testing and relied on arbitrary thresholds. This absolutely applies to my work too, and it’s something that has frustrated me. Second, many methods require manual confounder corrections, which I’d like to improve someday by using machine learning in a more automated but still robust way.
 
-The overall implementation of the autoencoder seems straightforward. It starts with raw counts $k_{ij}$ for gene $j$ in sample $i$. These counts are normalized by a size factor $s_i$ to correct for sequencing depth, then log-transformed:
+The overall implementation of the autoencoder seemed straightforward. It starts with raw counts $k_{ij}$ for gene $j$ in sample $i$. These counts are normalized by a size factor $s_i$ to correct for sequencing depth, then log-transformed:
 
 $$
 x_{ij} = \log \left( \frac{k_{ij} + 1}{s_i} \right)
@@ -36,7 +36,7 @@ Here, $h_i$ is the encoded version of $\tilde{x}_i$ from the encoder, and the bi
 
 $$\bar x_j = \mathrm{mean} \left( \log \left( \frac{k_{ij} + 1}{s_i} \right) \right)$$
 
-This puzzled me for some time because I was stuck on the idea of the autoencoder reconstructing its original input, as in most common use cases. I wondered how the output could be the full $y$ and not just the gene-wise-centered variation $\tilde{y}$, and in that case, I thought the bias term $b$ might simply converge toward zero so the autoencoder would reconstruct $\tilde{x}$. After some rereading and scribbling, I realized I needed to look at it through the lens of maximum likelihood estimation and stop thinking about it as plain reconstruction.
+This puzzled me for some time because I was stuck on the idea of the autoencoder reconstructing its original input, as in most common use cases. I wondered how the output could be the full $y$ and not just the gene-wise centered variation $\tilde{y}$, and in that case, I thought the bias term $b$ might simply converge toward zero so the autoencoder would reconstruct $\tilde{x}$. After some rereading and scribbling, I realized I needed to look at it through the lens of maximum likelihood estimation and stop thinking about it as plain reconstruction.
 
 In the supplemental materials, the authors show how the negative log-likelihood for the assumed negative binomial distribution is derived and used for optimization. Even so, I still find the notation $c_{ij} = AE(k_{ij})$ a bit confusing—it’s more like: first transform $k \rightarrow x$, then $y = AE(x)$, and finally transform back to the original scale $y \rightarrow c$.
 

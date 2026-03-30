@@ -12,19 +12,19 @@ An **autoencoder** is a type of neural network designed to learn efficient data 
     <img src="./ae.png" alt="Autoencoder Architecture" style="max-width:70%; height:auto;">
 </div>
 
-An autoencoder consists of two main components, Encoder and Decoder. In Encoder, the network takes the input data and put it into a latent space. As Encoder usually put this data into lower dimensional representation, the process is often called "compression". 
-Decoder's job is to reconstruct the original input from this compressed data representation in the latent space. The network is trained to minimize difference between the input and its reconstructed output. The network is trained to minimize the difference between the input and its reconstruction, forcing it to learn meaningful compressed representations. 
+An autoencoder consists of two main components, an Encoder and a Decoder. In the Encoder, the network takes the input data and puts it into a latent space. As the Encoder usually puts this data into a lower dimensional representation, the process is often called "compression". 
+The Decoder's job is to reconstruct the original input from this compressed data representation in the latent space. The network is trained to minimize the difference between the input and its reconstruction, forcing it to learn meaningful compressed representations. 
 
 ## Key application
 
-The idea of autoencoder may sound simple and easy, but autoencoders are very versatile and form backbone of many ML applications. Variational autoencoder, for example, combines the principles of autoencoder with probabilistic models, enabling the model to learn a continuous representation of the input and generate new data. Meta's [Masked autoencoder](https://arxiv.org/abs/2111.06377) demonstrates self-supervised learning for computer using autoencoder principle with masking patches. Also, [Sparse autoencoder](https://arxiv.org/abs/2309.08600) plays a crucial role in the field of interpretability research helping us understand the inner working of neural networks.
+The idea of autoencoder may sound simple and easy, but autoencoders are very versatile and form the backbone of many ML applications. Variational autoencoder, for example, combines the principles of autoencoder with probabilistic models, enabling the model to learn a continuous representation of the input and generate new data. Meta's [Masked autoencoder](https://arxiv.org/abs/2111.06377) demonstrates self-supervised learning for computer vision using autoencoder principle with masking patches. Also, [Sparse autoencoder](https://arxiv.org/abs/2309.08600) plays a crucial role in the field of interpretability research helping us understand the inner working of neural networks.
 
 Autoencoders are used in various domains, including:
 
-- Dimensionality reduction: Encoder learns to efficiently put input data onto lower dimension latent space than input space by compressing the input data. This is useful for simplifying data representation and improving efficiency of downstream tasks.
-- Feature learning: Autoencoders learn compressed representation of data, which can be used as a set of learned features. These features are used in other downstream machine learning tasks such as classification and regression.
-- Image denoising: autoencoder can be trained to reconstruct clean image from noisy input effectively as they tend to learn what’s most important from the input.
-- Anomaly detection: As in image denoising, autoencoder learns to reconstruct what normal data patterns are. if certain data pattern deviates from this, they can flag these anomalies. This can be used in applications such as fraud detection.
+- Dimensionality reduction: Encoder learns to efficiently put input data onto a lower dimensional latent space than input space by compressing the input data. This is useful for simplifying data representation and improving the efficiency of downstream tasks.
+- Feature learning: Autoencoders learn compressed representations of data, which can be used as a set of learned features. These features are used in other downstream machine learning tasks such as classification and regression.
+- Image denoising: Autoencoders can be trained to reconstruct a clean image from noisy input effectively as they tend to learn what’s most important from the input.
+- Anomaly detection: As in image denoising, an autoencoder learns to reconstruct what normal data patterns are. If a certain data pattern deviates from this, they can flag these anomalies. This can be used in applications such as fraud detection.
 
 ## Hands on with MNIST
 
@@ -66,7 +66,7 @@ The MNIST dataset consists of 28×28 pixel images of handwritten digits, looking
     <img src="./mnist_example.png" alt="MNIST Example" style="max-width:80%; height:auto;">
 </div>
 
-Then, define a simple autoencoder class with an encoder and decoder. Encoder compresses the 784(28x28) pixel 128 dimensional representation, and then encoding dimension which is 32 in this case. Decoder reconstructs the original image from the encoded representation ReLU activation is used in both encoder and decoder, and Sigmoid activation is used in the output layer to ensure the output values are between 0 and 1, which is suitable for image data normalized to this range.
+Then, define a simple autoencoder class with an encoder and decoder. The Encoder compresses the 784 (28x28) pixel input into a 128-dimensional representation, and then into the encoding dimension, which is 32 in this case. The Decoder reconstructs the original image from the encoded representation. ReLU activation is used in both encoder and decoder, and Sigmoid activation is used in the output layer to ensure the output values are between 0 and 1, which is suitable for image data normalized to this range.
 
 ```python
 class Autoencoder(nn.Module):

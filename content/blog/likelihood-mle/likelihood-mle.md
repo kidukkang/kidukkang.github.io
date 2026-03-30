@@ -12,11 +12,11 @@ While *probability* answers the question, "Given the model, what is the chance o
 
 
 In pocket A, the probability of drawing a red ball is $P(R|A) = {1\over 2}$, and the probability of drawing a yellow ball is $P(Y|A) = {1\over 2}$. 
-In pocket B, the probability of drawing a red ball is $P(R|B= {2\over 3})$, and the probability of drawing a yellow ball is $P(Y|B)= {1\over 3}$. 
+In pocket B, the probability of drawing a red ball is $P(R|B) = {2\over 3}$, and the probability of drawing a yellow ball is $P(Y|B)= {1\over 3}$. 
 
 These are **conditional probabilities**, meaning that for each pocket, the probabilities sum to 1.
 
-However, if we consider the problem from the perspective of the balls instead, this represents **likelihood**. For example, if we have already drawn a red ball, from which pocket is this ball likely to have come? Likelihood allows us to infer what is behind the observation—where the ball came from. Unlike probability, likelihood does not necessarily sum to 1, as the likelihood function is not treated as a probability distribution over the pockets($P(R|A)+P(R|B) >1$). Instead, likelihood is a function of the pockets, with the observed balls held constant.
+However, if we consider the problem from the perspective of the balls instead, this represents **likelihood**. For example, if we have already drawn a red ball, from which pocket is this ball likely to have come? Likelihood allows us to infer what is behind the observation—where the ball came from. Unlike probability, likelihood does not necessarily sum to 1, as the likelihood function is not treated as a probability distribution over the pockets ($P(R|A)+P(R|B) >1$). Instead, likelihood is a function of the pockets, with the observed balls held constant.
 
 Mathematically, if we denote the observed data as $ X $ and the parameters of a model as $ \Theta $, the likelihood function $ L $ is written as:
 

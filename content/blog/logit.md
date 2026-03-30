@@ -11,7 +11,7 @@ At its core, the logit function transforms probabilities (ranging between 0 and 
 
 # So, what is Logit?
 
-Logit is also called as log-odds, then what are odds?
+Logit is also called log-odds, then what are odds?
 
 The odds of an event are defined as the ratio of the probability of success $q$ to the probability of failure $1-q$:
 
@@ -33,7 +33,7 @@ This transformation maps probabilities $(0,1)$ to the entire real number range $
 
 # Logit and Sigmoid
 
-Sigmoid function is basically just the inverse of logit. From the above, we can derive:
+The sigmoid function is basically just the inverse of logit. From the above, we can derive:
 
 
 $$
