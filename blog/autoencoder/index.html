@@ -71,16 +71,16 @@
 <div style="text-align: center;">
     <picture><source type="image/avif" srcset="/blog/autoencoder/IfBCHvikYJ-1536.avif 1536w"><source type="image/webp" srcset="/blog/autoencoder/IfBCHvikYJ-1536.webp 1536w"><img loading="lazy" decoding="async" src="/blog/autoencoder/IfBCHvikYJ-1536.png" alt="Autoencoder Architecture" style="max-width:70%; height:auto;" width="1536" height="1024"></picture>
 </div>
-<p>An autoencoder consists of two main components, Encoder and Decoder. In Encoder, the network takes the input data and put it into a latent space. As Encoder usually put this data into lower dimensional representation, the process is often called &quot;compression&quot;.
-Decoder's job is to reconstruct the original input from this compressed data representation in the latent space. The network is trained to minimize difference between the input and its reconstructed output. The network is trained to minimize the difference between the input and its reconstruction, forcing it to learn meaningful compressed representations.</p>
+<p>An autoencoder consists of two main components, an Encoder and a Decoder. In the Encoder, the network takes the input data and puts it into a latent space. As the Encoder usually puts this data into a lower dimensional representation, the process is often called &quot;compression&quot;.
+The Decoder's job is to reconstruct the original input from this compressed data representation in the latent space. The network is trained to minimize the difference between the input and its reconstruction, forcing it to learn meaningful compressed representations.</p>
 <h2 id="key-application">Key application</h2>
-<p>The idea of autoencoder may sound simple and easy, but autoencoders are very versatile and form backbone of many ML applications. Variational autoencoder, for example, combines the principles of autoencoder with probabilistic models, enabling the model to learn a continuous representation of the input and generate new data. Meta's <a href="https://arxiv.org/abs/2111.06377">Masked autoencoder</a> demonstrates self-supervised learning for computer using autoencoder principle with masking patches. Also, <a href="https://arxiv.org/abs/2309.08600">Sparse autoencoder</a> plays a crucial role in the field of interpretability research helping us understand the inner working of neural networks.</p>
+<p>The idea of autoencoder may sound simple and easy, but autoencoders are very versatile and form the backbone of many ML applications. Variational autoencoder, for example, combines the principles of autoencoder with probabilistic models, enabling the model to learn a continuous representation of the input and generate new data. Meta's <a href="https://arxiv.org/abs/2111.06377">Masked autoencoder</a> demonstrates self-supervised learning for computer vision using autoencoder principle with masking patches. Also, <a href="https://arxiv.org/abs/2309.08600">Sparse autoencoder</a> plays a crucial role in the field of interpretability research helping us understand the inner working of neural networks.</p>
 <p>Autoencoders are used in various domains, including:</p>
 <ul>
-<li>Dimensionality reduction: Encoder learns to efficiently put input data onto lower dimension latent space than input space by compressing the input data. This is useful for simplifying data representation and improving efficiency of downstream tasks.</li>
-<li>Feature learning: Autoencoders learn compressed representation of data, which can be used as a set of learned features. These features are used in other downstream machine learning tasks such as classification and regression.</li>
-<li>Image denoising: autoencoder can be trained to reconstruct clean image from noisy input effectively as they tend to learn what’s most important from the input.</li>
-<li>Anomaly detection: As in image denoising, autoencoder learns to reconstruct what normal data patterns are. if certain data pattern deviates from this, they can flag these anomalies. This can be used in applications such as fraud detection.</li>
+<li>Dimensionality reduction: Encoder learns to efficiently put input data onto a lower dimensional latent space than input space by compressing the input data. This is useful for simplifying data representation and improving the efficiency of downstream tasks.</li>
+<li>Feature learning: Autoencoders learn compressed representations of data, which can be used as a set of learned features. These features are used in other downstream machine learning tasks such as classification and regression.</li>
+<li>Image denoising: Autoencoders can be trained to reconstruct a clean image from noisy input effectively as they tend to learn what’s most important from the input.</li>
+<li>Anomaly detection: As in image denoising, an autoencoder learns to reconstruct what normal data patterns are. If a certain data pattern deviates from this, they can flag these anomalies. This can be used in applications such as fraud detection.</li>
 </ul>
 <h2 id="hands-on-with-mnist">Hands on with MNIST</h2>
 <p>Let's walk through a simple autoencoder implementation using the MNIST dataset.</p>
@@ -111,7 +111,7 @@ test_loader <span class="token operator">=</span> torch<span class="token punctu
 <div style="text-align: center;">
     <picture><source type="image/avif" srcset="/blog/autoencoder/dHsIfEseqT-640.avif 640w"><source type="image/webp" srcset="/blog/autoencoder/dHsIfEseqT-640.webp 640w"><img loading="lazy" decoding="async" src="/blog/autoencoder/dHsIfEseqT-640.png" alt="MNIST Example" style="max-width:80%; height:auto;" width="640" height="480"></picture>
 </div>
-<p>Then, define a simple autoencoder class with an encoder and decoder. Encoder compresses the 784(28x28) pixel 128 dimensional representation, and then encoding dimension which is 32 in this case. Decoder reconstructs the original image from the encoded representation ReLU activation is used in both encoder and decoder, and Sigmoid activation is used in the output layer to ensure the output values are between 0 and 1, which is suitable for image data normalized to this range.</p>
+<p>Then, define a simple autoencoder class with an encoder and decoder. The Encoder compresses the 784 (28x28) pixel input into a 128-dimensional representation, and then into the encoding dimension, which is 32 in this case. The Decoder reconstructs the original image from the encoded representation. ReLU activation is used in both encoder and decoder, and Sigmoid activation is used in the output layer to ensure the output values are between 0 and 1, which is suitable for image data normalized to this range.</p>
 <pre class="language-python" tabindex="0"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Autoencoder</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> encoding_dim<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token builtin">super</span><span class="token punctuation">(</span>Autoencoder<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -256,7 +256,7 @@ fig<span class="token punctuation">.</span>show<span class="token punctuation">(
 			</p>
 		</footer>
 
-		<!-- This page `/blog/autoencoder/` was built on 2026-03-30T22:16:37.250Z -->
+		<!-- This page `/blog/autoencoder/` was built on 2026-03-30T22:26:46.864Z -->
 		<script type="module" src="/dist/cC8wS6ZjFU.js"></script>
 	</body>
 </html>

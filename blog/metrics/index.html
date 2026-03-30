@@ -64,7 +64,7 @@
 
 <ul class="post-metadata">
 	<li><a href="/tags/metrics/" class="post-tag">metrics</a>, </li>
-	<li><a href="/tags/preicision/" class="post-tag">Preicision</a>, </li>
+	<li><a href="/tags/precision/" class="post-tag">Precision</a>, </li>
 	<li><a href="/tags/recall/" class="post-tag">Recall</a>, </li>
 	<li><a href="/tags/f1-score/" class="post-tag">F1 Score</a>, </li>
 	<li><a href="/tags/mcc/" class="post-tag">MCC</a>, </li>
@@ -73,7 +73,7 @@
 </ul>
 
 <p>During my study and research, I mostly encountered <strong>accuracy</strong>, <strong>precision</strong>, <strong>recall</strong>, and <strong>F1 score</strong> as performance metrics for machine learning tasks. After I started working in the field of biotech, I quickly realized that people in biology use different metrics. It always takes me some time to get used to these definitions, so I’m writing this to go over them again in the hope that it will stick in my brain longer and more clearly.</p>
-<p><strong>Accuracy</strong> is the most straightforward metric; it measures the proportion of correct predictions among the total number. <strong>Precision</strong> and <strong>recall</strong> are two common performance metrics used in machine learning. Precision quantifies, among the data predicted as positive, how much is actually correct. For example, in a task distinguishing cats and dogs, precision tells us how many of the photos predicted as “dog” by the model are actually dogs. Recall quantifies, among all positives in the data(labeled as dog), how much the model successfully retrieves(predicted as dog). In the same example, recall shows what fraction of all actual dog photos the model correctly predicts as “dog.”</p>
+<p><strong>Accuracy</strong> is the most straightforward metric; it measures the proportion of correct predictions among the total number. <strong>Precision</strong> and <strong>recall</strong> are two common performance metrics used in machine learning. Precision quantifies, among the data predicted as positive, how much is actually correct. For example, in a task distinguishing cats and dogs, precision tells us how many of the photos predicted as “dog” by the model are actually dogs. Recall quantifies, among all positives in the data (labeled as dog), how much the model successfully retrieves (predicted as dog). In the same example, recall shows what fraction of all actual dog photos the model correctly predicts as “dog.”</p>
 <p>If every positive prediction is correct, precision is 1. If every actual truth is found, recall is 1. Each metric has cases where it is more important. For example, precision is especially crucial in the justice system. If a judge decides to send someone to jail because they are believed guilty, the harm of sending an innocent person to jail is extremely high. That’s why justice systems tend to be conservative in convicting, even at the cost of letting some guilty people go free (sacrificing recall).</p>
 <p><strong>When is recall more important than precision?</strong> Think of a fire alarm. It’s not uncommon to hear a fire alarm and have to evacuate a building, only to find out there was no real fire (a false positive). However, if there is an actual fire and the alarm fails to go off, the consequences can be far worse than the inconvenience of a false alarm. So, these systems are designed to maximize recall, even if that means tolerating a higher rate of false positives.</p>
 <p>Because precision and recall have an inverse relationship, they are often reported together, or combined using the <strong>F1 score</strong> or the <strong>Matthews Correlation Coefficient (MCC)</strong>.</p>
@@ -127,7 +127,7 @@ $$</p>
 			</p>
 		</footer>
 
-		<!-- This page `/blog/metrics/` was built on 2026-03-30T22:16:37.251Z -->
+		<!-- This page `/blog/metrics/` was built on 2026-03-30T22:26:46.865Z -->
 		<script type="module" src="/dist/cC8wS6ZjFU.js"></script>
 	</body>
 </html>
