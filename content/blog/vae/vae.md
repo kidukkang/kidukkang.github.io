@@ -72,6 +72,7 @@ $$
 = \log \int p_\theta(x\mid z)p(z)\,dz
 $$
 Now multiply and divide inside the integral by $q_\phi(z\mid x)$:
+
 $$
 \log p_\theta(x)
 = \log \int q_\phi(z\mid x)\,
@@ -79,6 +80,7 @@ $$
 $$
 
 This can be written as:
+
 $$
 \log p_\theta(x)
 = \log \mathbb{E}_{q_\phi(z\mid x)}
@@ -86,7 +88,9 @@ $$
 \frac{p_\theta(x\mid z)p(z)}{q_\phi(z\mid x)}
 \right]
 $$
+
 Applying Jensen’s inequality:
+
 $$
 \log p_\theta(x)
 \ge
@@ -95,9 +99,11 @@ $$
 \log \frac{p_\theta(x\mid z)p(z)}{q_\phi(z\mid x)}
 \right]
 $$
+
 This lower bound is the **Evidence Lower Bound**, or **ELBO**.
 
 We get:
+
 $$
 \mathcal{L}_{\text{ELBO}}(x)
 =
@@ -105,6 +111,7 @@ $$
 -
 D_{\mathrm{KL}}(q_\phi(z \mid x)\,\|\,p(z))
 $$
+
 The first term is the **reconstruction term**, and the second is the **KL divergence term** that regularizes the latent space.
 
 ## **The reparameterization trick**
